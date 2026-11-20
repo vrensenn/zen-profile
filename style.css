@@ -21,6 +21,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Nunito Sans', Arial, sans-serif;
 
@@ -103,6 +107,8 @@ header p {
     z-index: 1;
 }
 
+
+/* MAIN HEADING */
 h1 {
     font-family: 'Playfair Display', Georgia, serif;
     color: var(--text);
@@ -170,7 +176,8 @@ section h2 + ul {
     min-width: 0;
 }
 
-/* Profile photo without an extra frame */
+
+/* PROFILE PHOTO */
 .profile-photo {
     flex: 0 0 160px;
     width: 160px;
@@ -259,6 +266,11 @@ a:hover {
     color: var(--text);
 }
 
+a:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 4px;
+}
+
 
 /* FOOTER */
 footer {
@@ -339,5 +351,25 @@ footer {
     figure {
         width: 100%;
         max-width: 300px;
+    }
+}
+
+
+/* REDUCED MOTION ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    figure {
+        transition: none;
+    }
+
+    figure:hover {
+        transform: none;
+    }
+
+    a {
+        transition: none;
     }
 }
