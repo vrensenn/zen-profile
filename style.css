@@ -1,7 +1,5 @@
 
-/* GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
 
 /* COLOR PALETTE */
 :root {
@@ -10,119 +8,89 @@
     --header-bg: #FFFAFD;
     --accent: #FFB3E5;
     --text: #675046;
-
-    --pink-light: #FFE6F6;
-    --mint-light: #DDF8F3;
+    --pink: #FADCF0;
+    --mint: #D7F5EE;
 }
-
 
 /* GENERAL STYLING */
 * {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Nunito Sans', Arial, sans-serif;
-
-    /* Mint background with scattered polka dots */
+    margin: 0;
+    padding: 2rem;
     background-color: var(--main-bg);
 
     background-image:
-        radial-gradient(
-            circle,
-            rgba(255, 179, 229, 0.65) 2px,
-            transparent 2.2px
-        ),
-        radial-gradient(
-            circle,
-            rgba(255, 179, 229, 0.45) 2px,
-            transparent 2.2px
-        );
+        radial-gradient(#C5E9DF 2px, transparent 2px),
+        radial-gradient(#F9D5EA 2px, transparent 2px);
 
-    background-size: 46px 42px, 46px 42px;
-    background-position: 0 0, 23px 21px;
-    background-repeat: repeat;
+    background-size: 35px 35px;
+    background-position: 0 0, 17px 17px;
 
+    font-family: 'Nunito Sans', sans-serif;
     color: var(--text);
-    margin: 0;
-    padding: 2rem;
-    font-size: 1rem;
     line-height: 1.7;
 }
-
 
 /* HEADER */
 header {
     position: relative;
-    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    padding: 2.5rem 1.5rem;
+
     text-align: center;
 
-    /* Very light alternating stripes */
-    background-color: #FFFAFD;
-    background-image: repeating-linear-gradient(
-        90deg,
-        #FFFAFD 0px,
-        #FFFAFD 24px,
-        #FFF9FC 24px,
-        #FFF9FC 48px
-    );
+    background-color: var(--header-bg);
 
-    color: var(--text);
-    padding: 2.5rem 2rem;
-    margin-bottom: 2rem;
-    border: 2px solid var(--accent);
-    border-radius: 20px;
-    box-shadow: 0 5px 0 rgba(255, 179, 229, 0.2);
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            #FFEAF5,
+            #FFEAF5 12px,
+            #FFFFFF 12px,
+            #FFFFFF 24px
+        );
+
+    border: 3px solid var(--accent);
+    border-radius: 18px;
+
+    box-shadow: 4px 5px 0px #E7C7D9;
 }
 
+header h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--text);
+    letter-spacing: 2px;
+}
 
-/* STAR DECORATIONS */
+header p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+/* HEADER DECORATIONS */
 header::before {
-    content: "★";
+    content: "✦";
     position: absolute;
-    top: 12px;
-    left: 22px;
-    color: var(--accent);
-    font-size: 1.8rem;
-    transform: rotate(-12deg);
+    top: 15px;
+    left: 25px;
+    font-size: 1.5rem;
+    color: #E6A5CF;
 }
 
 header::after {
     content: "★";
     position: absolute;
-    bottom: 8px;
-    right: 22px;
-    color: var(--accent);
-    font-size: 2rem;
-    transform: rotate(12deg);
+    bottom: 15px;
+    right: 25px;
+    font-size: 1.5rem;
+    color: #E6A5CF;
 }
-
-header h1,
-header p {
-    position: relative;
-    z-index: 1;
-}
-
-
-/* MAIN HEADING */
-h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: var(--text);
-    font-size: 2.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0 0 0.5rem;
-}
-
-header p {
-    font-size: 1.05rem;
-    margin: 0;
-}
-
 
 /* MAIN CONTENT */
 main {
@@ -130,40 +98,36 @@ main {
     margin: 0 auto;
 }
 
-
-/* CONTENT SECTIONS */
+/* SECTIONS */
 section {
-    background-color: var(--section-bg);
-    background-image: none;
-
-    padding: 1.75rem;
     margin-bottom: 1.5rem;
-    border: 1.5px solid var(--accent);
-    border-radius: 18px;
-    box-shadow: 0 4px 0 rgba(255, 179, 229, 0.18);
+    padding: 1.8rem;
+
+    background-color: var(--section-bg);
+
+    border: 2px solid var(--pink);
+    border-radius: 16px;
+
+    box-shadow: 3px 4px 0px #EAD8E2;
 }
 
-
-/* SECTION HEADINGS */
-h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: var(--text);
-    font-size: 1.6rem;
-    font-weight: 700;
+section h2 {
     margin-top: 0;
     margin-bottom: 1rem;
-    display: inline-block;
-    border-bottom: 3px solid var(--accent);
-    padding-bottom: 0.25rem;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--text);
+
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
 }
 
-section h2 + p,
-section h2 + ul {
-    margin-top: 0;
+section p {
+    margin-top: 0.5rem;
 }
 
-
-/* ABOUT ME */
+/* ABOUT ME SECTION */
 .about-section {
     display: flex;
     align-items: center;
@@ -173,31 +137,23 @@ section h2 + ul {
 
 .about-text {
     flex: 1;
-    min-width: 0;
 }
 
-
-/* PROFILE PHOTO */
 .profile-photo {
-    flex: 0 0 160px;
+    flex-shrink: 0;
     width: 160px;
     height: 160px;
-    padding: 0;
-    background: none;
-    border: none;
-    border-radius: 0;
     overflow: hidden;
+
+    border: 5px solid var(--accent);
+    border-radius: 50%;
 }
 
 .profile-photo img {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: none;
-    border-radius: 0;
 }
-
 
 /* THINGS I LOVE */
 ul {
@@ -205,35 +161,29 @@ ul {
 }
 
 li {
-    margin-bottom: 0.5rem;
-    padding-left: 0.25rem;
+    margin-bottom: 0.4rem;
 }
 
-li::marker {
-    color: var(--accent);
-}
-
-
-/* PASSION PROJECTS */
+/* PASSION PROJECTS GALLERY */
 .project-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 1.25rem;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
 }
 
 figure {
+    flex: 1 1 220px;
+    max-width: 250px;
     margin: 0;
-    width: 250px;
-    padding: 8px;
-    background-color: var(--header-bg);
-    border: 1.5px solid var(--accent);
-    border-radius: 15px;
-    transition: transform 0.2s ease;
-}
+    padding: 0.8rem;
 
-figure:hover {
-    transform: rotate(-1deg) translateY(-3px);
+    text-align: center;
+
+    background-color: #FFF9FC;
+    border: 2px solid var(--pink);
+    border-radius: 12px;
 }
 
 figure img {
@@ -241,60 +191,62 @@ figure img {
     width: 100%;
     height: 230px;
     object-fit: cover;
-    border-radius: 10px;
+
+    border-radius: 8px;
 }
 
 figcaption {
-    margin-top: 0.65rem;
-    font-size: 0.95rem;
+    margin-top: 0.7rem;
     font-weight: 700;
-    text-align: center;
     color: var(--text);
 }
-
 
 /* LINKS */
 a {
-    color: #A34F83;
-    text-decoration-color: var(--accent);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
-    transition: color 0.2s ease;
+    color: #A35D96;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 a:hover {
-    color: var(--text);
+    color: #D47BB4;
+    text-decoration: underline;
 }
 
 a:focus-visible {
-    outline: 2px solid var(--text);
+    outline: 2px solid #A35D96;
     outline-offset: 4px;
 }
 
-
 /* FOOTER */
 footer {
+    max-width: 900px;
+    margin: 2rem auto 0;
     text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
     font-size: 0.9rem;
-    color: var(--text);
 }
 
-
-/* TABLET */
+/* TABLET RESPONSIVENESS */
 @media (max-width: 768px) {
     body {
         padding: 1.5rem;
     }
 
+    header h1 {
+        font-size: 2rem;
+    }
+
     .about-section {
-        gap: 1.5rem;
+        gap: 1.2rem;
+    }
+
+    .profile-photo {
+        width: 135px;
+        height: 135px;
     }
 }
 
-
-/* MOBILE */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 600px) {
     body {
         padding: 1rem;
@@ -302,43 +254,22 @@ footer {
 
     header {
         padding: 2rem 1rem;
-        margin-bottom: 1.5rem;
     }
 
-    header::before {
-        font-size: 1.3rem;
-        left: 12px;
-    }
-
-    header::after {
-        font-size: 1.5rem;
-        right: 12px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 0.95rem;
+    header h1 {
+        font-size: 1.7rem;
     }
 
     section {
-        padding: 1.25rem;
-        margin-bottom: 1.25rem;
-    }
-
-    h2 {
-        font-size: 1.4rem;
+        padding: 1.3rem;
     }
 
     .about-section {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
     }
 
     .profile-photo {
-        flex: 0 0 150px;
         width: 150px;
         height: 150px;
     }
@@ -354,22 +285,9 @@ footer {
     }
 }
 
-
-/* REDUCED MOTION ACCESSIBILITY */
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
-    }
-
-    figure {
-        transition: none;
-    }
-
-    figure:hover {
-        transform: none;
-    }
-
-    a {
-        transition: none;
     }
 }
